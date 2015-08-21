@@ -1,0 +1,21 @@
+name       : yum-utils
+version    : 1.1.31
+release    : 1
+source     :
+    - http://yum.baseurl.org/download/yum-utils/yum-utils-1.1.31.tar.gz : 1f7a9bad2ad743399a7f73353f532636d38042b8f93943d8427e48161700e1f4
+license    : GPL-2.0
+summary    : yum-utils is a collection of utilities and plugins extending and supplementing yum in different ways.
+description: |
+    yum-utils is a collection of utilities and plugins extending and supplementing yum in different ways.
+builddeps  :
+    - yum
+    - rpm
+rundeps    :
+    - yum
+    - rpm
+build      : |
+    %make
+install    : |
+    %make_install
+    # Because no.
+    rm -rf $installdir/etc/NetworkManager
